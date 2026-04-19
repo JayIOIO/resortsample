@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casita Nueve - Premium Private Pool Villa in Angeles City, Pampanga. Perfect for family gatherings, team building, and celebrations.">
+    <title>Casita Nueve | Premium Private Pool Villa - Angeles City</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify Icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #1a1a1a;
+            background-image: url('Images/Gallery/BackrgoundPicture.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ============================================
+        CUSTOM GRADIENTS
+           ============================================ */
+        .gradient-primary {
+            background: linear-gradient(135deg, #0A84FF 0%, #0066CC 100%);
+        }
+
+        .gradient-primary-hover {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        }
+
+        .gradient-subtle {
+            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        /* ============================================
+        ANIMATIONS
+           ============================================ */
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 0.7s ease-out;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .stagger-item {
+            animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn-primary {
+            background: linear-gradient(135deg, #0A84FF 0%, #0066CC 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(10, 132, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(10, 132, 255, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0A84FF;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 2px solid #0A84FF;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn-secondary:hover {
+            background: #0A84FF;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(10, 132, 255, 0.2);
+        }
+
+        /* ============================================
+           CARDS & CONTAINERS
+           ============================================ */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .card-hover:hover {
+            border-color: #0A84FF;
+            box-shadow: 0 20px 50px rgba(10, 132, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* ============================================
+           GALLERY
+           ============================================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* ============================================
+           MODAL
+           ============================================ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: scaleIn 0.3s ease;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal:hover {
+            color: #0A84FF;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ============================================
+           SCROLLBAR
+           ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0A84FF;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0066CC;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 16px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .shadow-premium {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .shadow-premium-lg {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .border-subtle {
+            border: 1px solid rgba(229, 231, 235, 0.6);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0A84FF 0%, #0066CC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+        NAVIGATION BAR
+        ============================================ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img src="/Images/main-logo.jpg" alt="Casita Nueve Logo" class="w-10 h-10 object-cover rounded-sm">
+                    <!--  <span class="text-white font-bold text-lg font-display">CN</span> -->
+                    </div>
+                    <span class="font-bold text-lg text-gray-900 hidden sm:inline font-display">Casita Nueve</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Features</a>
+                    <a href="#amenities" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Amenities</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Gallery</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Pricing</a>
+                    <a href="#location" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Location</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">
+                        <iconify-icon icon="mdi:facebook" width="20" height="20"></iconify-icon>
+                        <span class="hidden md:inline">Message</span>
+                    </a>
+                    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon>
+                        <span class="hidden sm:inline">Book Now</span>
+                        <span class="sm:hidden">Book</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="animate-slide-up">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-6 font-medium text-sm border border-blue-200">
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        Premium Private Resort
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
+                        Your Perfect Private Escape Awaits
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Experience luxury and comfort at Casita Nueve, your ideal destination for family gatherings, team building, and unforgettable celebrations. Located in the heart of Angeles City with world-class amenities.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary justify-center">
+                            <iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon>
+                            Book via Facebook
+                        </a>
+                        <a href="#gallery" class="btn-secondary justify-center">
+                            <iconify-icon icon="mdi:images" width="18" height="18"></iconify-icon>
+                            View Gallery
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative animate-fade-in">
+                    <div class="relative rounded-2xl overflow-hidden shadow-premium-lg group">
+                        <img src="/Images/Gallery/468397788_122180393246104833_6987427805930990080_n.jpg" alt="Casita Nueve Private Pool" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <!-- Rating Badge -->
+                        <div class="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-white/20">
+                            <div class="flex items-center gap-1 mb-1">
+                                <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
+                                <span class="text-2xl font-bold text-gray-900">4.8</span>
+                            </div>
+                            <div class="text-xs text-gray-600">Guest Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-4 mt-16 pt-16 border-t border-gray-200">
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">20-22</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">Max Guests</div>
+                </div>
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">3</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">Bedrooms</div>
+                </div>
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">1</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">Private Pool</div>
+                </div>
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">24/7</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">WiFi</div>
+                </div>
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">∞</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">Videoke</div>
+                </div>
+                <div class="text-center stagger-item">
+                    <div class="text-3xl font-bold text-gray-900">✓</div>
+                    <div class="text-sm text-gray-600 mt-2 font-medium">Free Parking</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURES SECTION
+         ============================================ -->
+    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Why Choose Casita Nueve?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need for an unforgettable experience</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover p-8 rounded-xl bg-white">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:home-city" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Modern Rustic Design</h3>
+                    <p class="text-gray-600 leading-relaxed">Bahay kubo-inspired architecture blending traditional charm with contemporary comfort and luxury amenities.</p>
+                </div>
+
+                <div class="card-hover p-8 rounded-xl bg-white stagger-item">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:swimming" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Crystal Clear Pool</h3>
+                    <p class="text-gray-600 leading-relaxed">Exclusive private pool area perfect for swimming, relaxation, and fun with family and friends.</p>
+                </div>
+
+                <div class="card-hover p-8 rounded-xl bg-white stagger-item">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:music" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Premium Videoke</h3>
+                    <p class="text-gray-600 leading-relaxed">State-of-the-art karaoke system with unlimited songs and professional sound quality for entertainment.</p>
+                </div>
+
+                <div class="card-hover p-8 rounded-xl bg-white stagger-item">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:chef-hat" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Outdoor Kitchen</h3>
+                    <p class="text-gray-600 leading-relaxed">Fully equipped outdoor cooking area with grill and complete kitchen facilities for meal preparation.</p>
+                </div>
+
+                <div class="card-hover p-8 rounded-xl bg-white stagger-item">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:wifi" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">High-Speed WiFi</h3>
+                    <p class="text-gray-600 leading-relaxed">Fast and reliable internet connection throughout the property for staying connected.</p>
+                </div>
+
+                <div class="card-hover p-8 rounded-xl bg-white stagger-item">
+                    <div class="w-14 h-14 gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <iconify-icon icon="mdi:air-conditioner" width="28" height="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Air Conditioning</h3>
+                    <p class="text-gray-600 leading-relaxed">All bedrooms feature individual air conditioning units for maximum comfort and privacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         AMENITIES SECTION
+         ============================================ -->
+    <section id="amenities" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Complete Amenities</h2>
+                <p class="text-lg text-gray-600">Everything provided for your comfort and enjoyment</p>
+            </div>
+
+            <!-- Amenities Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Accommodation</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">3 Air-Conditioned Bedrooms</div>
+                                <div class="text-sm text-gray-600">Each with private ensuite bathroom and shower</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Capacity: 20-22 Guests</div>
+                                <div class="text-sm text-gray-600">Perfect for overnight stays and celebrations</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Comfortable Bedding</div>
+                                <div class="text-sm text-gray-600">Premium quality linens and pillows</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Kitchen & Dining</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Complete Kitchen Facilities</div>
+                                <div class="text-sm text-gray-600">Cookware, utensils, gas stove, refrigerator, rice cooker</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Outdoor Kitchen & Grill</div>
+                                <div class="text-sm text-gray-600">Perfect for BBQ and outdoor dining experiences</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Water Dispenser</div>
+                                <div class="text-sm text-gray-600">Fresh drinking water available 24/7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Entertainment</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Premium Videoke System</div>
+                                <div class="text-sm text-gray-600">Unlimited songs with professional sound quality</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Private Pool Area</div>
+                                <div class="text-sm text-gray-600">Exclusive for your group's enjoyment</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Lounge & Seating Areas</div>
+                                <div class="text-sm text-gray-600">Comfortable spaces for relaxation and socializing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Convenience</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">High-Speed WiFi</div>
+                                <div class="text-sm text-gray-600">Free internet throughout the property</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">Secure Parking</div>
+                                <div class="text-sm text-gray-600">Free parking within the premises</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 group">
+                            <iconify-icon icon="mdi:check-circle" width="24" height="24" class="text-green-500 shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                            <div>
+                                <div class="font-semibold text-gray-900">24/7 Support</div>
+                                <div class="text-sm text-gray-600">Responsive host available via Facebook</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
+                <p class="text-lg text-gray-600">Take a virtual tour of our beautiful property</p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Private Pool">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Villa Exterior">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Lounge Area">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bedroom">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kitchen">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Night View">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Entertainment">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item stagger-item" onclick="openModal(this.querySelector('img').src)">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Outdoor Space">
+                    <div class="gallery-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         IMAGE MODAL
+         ============================================ -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Gallery Image">
+        </div>
+    </div>
+
+    <!-- ============================================
+         PRICING SECTION
+         ============================================ -->
+    <section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Transparent Pricing</h2>
+                <p class="text-lg text-gray-600">Flexible rates for every occasion</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Weekday Card -->
+                <div class="card-hover bg-white rounded-xl p-8 stagger-item">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Weekday</h3>
+                        <p class="text-sm text-gray-600">Monday - Thursday</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold text-gray-900">₱8,500</div>
+                        <div class="text-sm text-gray-600 mt-2">per night</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Up to 20-22 guests
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            All amenities included
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Free WiFi & Parking
+                        </li>
+                    </ul>
+                    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">Book Now</a>
+                </div>
+
+                <!-- Weekend Card (Featured) -->
+                <div class="card-hover bg-white rounded-xl p-8 border-2 border-blue-500 relative stagger-item">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                        MOST POPULAR
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Weekend</h3>
+                        <p class="text-sm text-gray-600">Friday - Sunday</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold text-blue-600">₱11,500</div>
+                        <div class="text-sm text-gray-600 mt-2">per night</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Up to 20-22 guests
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            All amenities included
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Free WiFi & Parking
+                        </li>
+                    </ul>
+                    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">Book Now</a>
+                </div>
+
+                <!-- Holiday Card -->
+                <div class="card-hover bg-white rounded-xl p-8 stagger-item">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Holiday</h3>
+                        <p class="text-sm text-gray-600">Special Occasions</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-4xl font-bold text-gray-900">₱11,500</div>
+                        <div class="text-sm text-gray-600 mt-2">per night</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Up to 20-22 guests
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            All amenities included
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-700">
+                            <iconify-icon icon="mdi:check" width="20" height="20" class="text-green-500"></iconify-icon>
+                            Free WiFi & Parking
+                        </li>
+                    </ul>
+                    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center">Book Now</a>
+                </div>
+            </div>
+
+            <!-- What's Included -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">What's Included?</h3>
+                <p class="text-gray-600 mb-6">All rates include access to all amenities, utilities, and 24/7 host support</p>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:check-circle" width="20" height="20" class="text-green-500"></iconify-icon>
+                        <span class="text-gray-700 font-medium">Pool Access</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:check-circle" width="20" height="20" class="text-green-500"></iconify-icon>
+                        <span class="text-gray-700 font-medium">Videoke</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:check-circle" width="20" height="20" class="text-green-500"></iconify-icon>
+                        <span class="text-gray-700 font-medium">Kitchen Use</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <iconify-icon icon="mdi:check-circle" width="20" height="20" class="text-green-500"></iconify-icon>
+                        <span class="text-gray-700 font-medium">WiFi & Parking</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Signal -->
+            <div class="bg-blue-50 rounded-xl p-6 text-center mt-12">
+                <div class="flex items-center justify-center gap-1 mb-3">
+                    <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    <iconify-icon icon="mdi:star-half-full" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    <span class="font-semibold text-gray-900 ml-2">4.8 / 5</span>
+                </div>
+                <p class="text-gray-700 italic">"Our guests consistently praise our clean facilities and responsive service!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Common questions answered</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        Is the pool private?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes, Casita Nueve offers an exclusive private pool area reserved solely for your group's enjoyment during your stay.</p>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        What is the maximum guest capacity?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Our property can comfortably accommodate up to 20-22 guests for overnight stays.</p>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        What amenities are included in the rate?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">All rates include access to the private pool, unlimited videoke, complete kitchen facilities, outdoor grill, high-speed WiFi, air-conditioned bedrooms, and free parking.</p>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        Can we bring our own food and drinks?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Yes, you're welcome to bring your own food and drinks. Our complete kitchen facilities and outdoor grill are available for your use.</p>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        What is the check-in and check-out time?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Standard check-in is at 12:00 PM and check-out is at 12:00 PM. Flexible arrangements may be available upon request. Please contact us via Facebook to discuss your specific needs.</p>
+                </details>
+
+                <!-- FAQ Item 6 -->
+                <details class="group bg-white rounded-xl p-6 border border-gray-200 cursor-pointer transition-all duration-300 hover:border-blue-300 hover:shadow-premium">
+                    <summary class="flex justify-between items-center font-semibold text-lg text-gray-900 leading-relaxed">
+                        How do I book and make a reservation?
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24" class="transform transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+                    </summary>
+                    <p class="text-gray-600 mt-4 leading-relaxed">Simply click the "Book via Facebook" button and message us directly. Our responsive host will assist you with availability, pricing, and any special requests you may have.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LOCATION SECTION
+         ============================================ -->
+    <section id="location" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Location & Directions</h2>
+                <p class="text-lg text-gray-600">Easily accessible from major landmarks</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Location Info -->
+                <div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-8 mb-6 shadow-premium">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Where We Are</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-blue-600 shrink-0 mt-1"></iconify-icon>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Address</div>
+                                    <div class="text-gray-600">Cabio Bacal, Sapalibutad, Angeles City, Pampanga</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <iconify-icon icon="mdi:airplane" width="24" height="24" class="text-blue-600 shrink-0 mt-1"></iconify-icon>
+                                <div>
+                                    <div class="font-semibold text-gray-900">From Airport</div>
+                                    <div class="text-gray-600">15 minutes from Clark International Airport</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <iconify-icon icon="mdi:shopping-center" width="24" height="24" class="text-blue-600 shrink-0 mt-1"></iconify-icon>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Nearby</div>
+                                    <div class="text-gray-600">Close to Marquee Mall and major attractions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.google.com/maps/dir//Casita+Nueve+Private+Pool/@15.1522397,120.6308587,17z/" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 justify-center">
+                            <iconify-icon icon="mdi:directions" width="18" height="18"></iconify-icon>
+                            Get Directions
+                        </a>
+                        <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-secondary flex-1 justify-center">
+                            <iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="rounded-xl overflow-hidden shadow-premium-lg border border-gray-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3851.365314781472!2d120.6308587!3d15.1522397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f1b86e769193%3A0x59097bf72ffa3a17!2sCasita%20Nueve%20Private%20Pool!5e0!3m2!1sen!2sph!4v1713500000000!5m2!1sen!2sph" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         REVIEWS SECTION
+         ============================================ -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Guest Reviews</h2>
+                <p class="text-lg text-gray-600">What our guests have to say</p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-premium card-hover stagger-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"Had an amazing time with my family! The <span class="font-semibold text-blue-600">pool was perfect</span> and the <span class="font-semibold text-blue-600">videoke system</span> kept us entertained all night. Highly recommended!"</p>
+                    <div class="font-semibold text-gray-900">Maria Santos</div>
+                    <div class="text-sm text-gray-600">Family Gathering</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-premium card-hover stagger-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"Perfect venue for our team building! <span class="font-semibold text-blue-600">Clean facilities</span>, <span class="font-semibold text-blue-600">great amenities</span>, and <span class="font-semibold text-blue-600">responsive host</span>. Will definitely book again!"</p>
+                    <div class="font-semibold text-gray-900">Juan Dela Cruz</div>
+                    <div class="text-sm text-gray-600">Corporate Event</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-premium card-hover stagger-item">
+                    <div class="flex items-center gap-1 mb-4">
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="20" height="20" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">"Exceeded all expectations! <span class="font-semibold text-blue-600">Beautiful property</span>, <span class="font-semibold text-blue-600">well-maintained</span>, and the <span class="font-semibold text-blue-600">outdoor kitchen</span> was fantastic for our celebration."</p>
+                    <div class="font-semibold text-gray-900">Ana Rodriguez</div>
+                    <div class="text-sm text-gray-600">Birthday Party</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-blue-800">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="font-display text-4xl font-bold mb-4">Ready to Book Your Getaway?</h2>
+            <p class="text-lg mb-8 text-blue-100">Don't miss out on your perfect private escape. Contact us today via Facebook to reserve your dates.</p>
+            <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <iconify-icon icon="mdi:facebook" width="24" height="24"></iconify-icon>
+                Message Us on Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold font-display">CN</span>
+                        </div>
+                        <span class="font-bold text-white font-display">Casita Nueve</span>
+                    </div>
+                    <p class="text-sm">Your perfect private escape for unforgettable celebrations and gatherings.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors duration-300">Gallery</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors duration-300">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 flex items-center gap-2">
+                                <iconify-icon icon="mdi:facebook" width="16" height="16"></iconify-icon>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/place/Casita+Nueve+Private+Pool/@15.1522397,120.6308587,17z/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300 flex items-center gap-2">
+                                <iconify-icon icon="mdi:map-marker" width="16" height="16"></iconify-icon>
+                                Location
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-bold text-white mb-4">Hours</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Available 24/7</li>
+                        <li>Check-in: 12:00 PM</li>
+                        <li>Check-out: 12:00 PM</li>
+                        <li>Flexible arrangements available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2024 Casita Nueve Private Pool. All rights reserved.</p>
+                <p class="mt-2">Located in Angeles City, Pampanga | Perfect for Celebrations & Gatherings</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         FLOATING CTA BUTTON
+         ============================================ -->
+    <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 btn-primary rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-2xl transform hover:scale-110 transition-all duration-300 animate-float md:bottom-8 md:right-8">
+        <iconify-icon icon="mdi:facebook" width="28" height="28" class="text-white"></iconify-icon>
+    </a>
+
+    <!-- ============================================
+         MOBILE STICKY CTA
+         ============================================ -->
+    <div class="fixed bottom-0 left-0 right-0 md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/80 px-4 py-4 z-40 shadow-2xl">
+        <div class="flex items-center justify-between gap-4">
+            <div>
+                <div class="text-sm font-semibold text-gray-900">₱8,500 <span class="text-xs font-normal text-gray-500">/ night</span></div>
+                <div class="text-xs font-medium text-blue-600">Available today</div>
+            </div>
+            <a href="https://www.facebook.com/casita.nueve" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1">
+                <iconify-icon icon="mdi:facebook" width="18" height="18"></iconify-icon>
+                Book
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ============================================
+        // GALLERY & MODAL
+        // ============================================
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on outside click
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // ============================================
+        // SMOOTH SCROLL
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // INTERSECTION OBSERVER FOR ANIMATIONS
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================
+        // NAVBAR SHADOW ON SCROLL
+        // ============================================
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // ============================================
+        // MOBILE STICKY CTA VISIBILITY
+        // ============================================
+        const mobileCTA = document.querySelector('.fixed.bottom-0');
+        const heroSection = document.getElementById('home');
+
+        window.addEventListener('scroll', function() {
+            const heroBottom = heroSection.offsetHeight;
+            if (window.scrollY > heroBottom) {
+                mobileCTA.style.display = 'block';
+            } else {
+                mobileCTA.style.display = 'none';
+            }
+        });
+
+        // ============================================
+        // PRELOAD IMAGES FOR GALLERY
+        // ============================================
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        galleryImages.forEach(img => {
+            const newImg = new Image();
+            newImg.src = img.src;
+        });
+    </script>
+
+</body>
+</html>
